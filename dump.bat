@@ -1,0 +1,1 @@
+mysqldump -u root pw_superanim > dump.sql

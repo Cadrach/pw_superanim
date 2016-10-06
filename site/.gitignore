@@ -1,1 +1,4 @@
 /config.php
+/assets/sessions/*
+/assets/logs/*
+/assets/cache/*
