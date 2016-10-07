@@ -110,5 +110,5 @@ $config->installed = 1475738924;
  * Installer: HTTP Hosts Whitelist
  * 
  */
-$config->httpHosts = array('localhost');
+$config->httpHosts = array('localhost', 'superanim.on-web.fr');
 
