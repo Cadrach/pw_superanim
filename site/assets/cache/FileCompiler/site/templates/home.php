@@ -12,11 +12,11 @@ if(count($page->images)) {
 	// if the page has images on it, grab one of them randomly... 
 	$image = $page->images->getRandom();
 	// resize it to 400 pixels wide
-	$image = $image->width(400); 
+	$image = $image->width(400);
 	// output the image at the top of the sidebar...
 	$sidebar = "<img src='$image->url' alt='$image->description' />";
 	// ...and append sidebar text under the image
-	$sidebar .= $page->sidebar;	
+	$sidebar .= $page->sidebar;
 } else {
 	// no images... 
 	// append sidebar text if the page has it

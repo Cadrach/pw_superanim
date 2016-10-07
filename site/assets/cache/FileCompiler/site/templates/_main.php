@@ -1,4 +1,5 @@
 <?php namespace ProcessWire;
+$isHome = count($page->parents()) == 0;
 
 /**
  * _main.php
@@ -60,7 +61,7 @@
 	<!-- search form-->
 	<form class='search' action='<?php echo $pages->get('template=search')->url; ?>' method='get'>
 		<input type='text' name='q' placeholder='Search' value='<?php echo $sanitizer->entities($input->whitelist('q')); ?>' />
-		<button type='submit' name='submit'>Search</button>
+		<button type='submit' name='submit'>Recherche</button>
 	</form>
 
 	<!-- breadcrumbs -->
@@ -70,14 +71,14 @@
 			echo "<span><a href='$item->url'>$item->title</a></span> "; 
 		}
 		// optionally output the current page as the last item
-		echo "<span>$page->title</span> "; 
+		echo ($isHome ? "":"<span>$page->title</span> ");
 	?></div>
 
 	<div id='main'>
 
 		<!-- main content -->
 		<div id='content'>
-			<h1><?php echo $title; ?></h1>
+			<h1><?php echo ($isHome?'':$title); ?></h1>
 			<?php echo $content; ?>
 		</div>
 
