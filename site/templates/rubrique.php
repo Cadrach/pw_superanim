@@ -48,4 +48,8 @@ $list = $page->children($params);
     }?>
 <?php endforeach;?>
 
+<?php if( ! count($list)):?>
+    <div class="alert alert-info">Aucun résultat à afficher</div>
+<?php endif?>
+
 <?php include '_footer.php';?>
