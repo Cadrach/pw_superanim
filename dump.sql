@@ -399,10 +399,10 @@ DROP TABLE IF EXISTS `field_rub_categorie`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `field_rub_categorie` (
   `pages_id` int(10) unsigned NOT NULL,
-  `data` int(10) unsigned NOT NULL,
+  `data` int(11) NOT NULL,
   `sort` int(10) unsigned NOT NULL,
   PRIMARY KEY (`pages_id`,`sort`),
-  KEY `data` (`data`)
+  KEY `data` (`data`,`pages_id`,`sort`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -412,7 +412,6 @@ CREATE TABLE `field_rub_categorie` (
 
 LOCK TABLES `field_rub_categorie` WRITE;
 /*!40000 ALTER TABLE `field_rub_categorie` DISABLE KEYS */;
-INSERT INTO `field_rub_categorie` VALUES (1028,1,0),(1028,5,1),(1029,1,0),(1029,2,1);
 /*!40000 ALTER TABLE `field_rub_categorie` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -425,10 +424,10 @@ DROP TABLE IF EXISTS `field_rub_duree`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `field_rub_duree` (
   `pages_id` int(10) unsigned NOT NULL,
-  `data` int(10) unsigned NOT NULL,
+  `data` int(11) NOT NULL,
   `sort` int(10) unsigned NOT NULL,
   PRIMARY KEY (`pages_id`,`sort`),
-  KEY `data` (`data`)
+  KEY `data` (`data`,`pages_id`,`sort`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -438,7 +437,6 @@ CREATE TABLE `field_rub_duree` (
 
 LOCK TABLES `field_rub_duree` WRITE;
 /*!40000 ALTER TABLE `field_rub_duree` DISABLE KEYS */;
-INSERT INTO `field_rub_duree` VALUES (1015,2,0),(1028,1,0);
 /*!40000 ALTER TABLE `field_rub_duree` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -451,10 +449,10 @@ DROP TABLE IF EXISTS `field_rub_effectif`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `field_rub_effectif` (
   `pages_id` int(10) unsigned NOT NULL,
-  `data` int(10) unsigned NOT NULL,
+  `data` int(11) NOT NULL,
   `sort` int(10) unsigned NOT NULL,
   PRIMARY KEY (`pages_id`,`sort`),
-  KEY `data` (`data`)
+  KEY `data` (`data`,`pages_id`,`sort`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -464,7 +462,6 @@ CREATE TABLE `field_rub_effectif` (
 
 LOCK TABLES `field_rub_effectif` WRITE;
 /*!40000 ALTER TABLE `field_rub_effectif` DISABLE KEYS */;
-INSERT INTO `field_rub_effectif` VALUES (1015,2,0),(1028,1,0);
 /*!40000 ALTER TABLE `field_rub_effectif` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -477,10 +474,10 @@ DROP TABLE IF EXISTS `field_rub_materiel`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `field_rub_materiel` (
   `pages_id` int(10) unsigned NOT NULL,
-  `data` int(10) unsigned NOT NULL,
+  `data` int(11) NOT NULL,
   `sort` int(10) unsigned NOT NULL,
   PRIMARY KEY (`pages_id`,`sort`),
-  KEY `data` (`data`)
+  KEY `data` (`data`,`pages_id`,`sort`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -490,7 +487,6 @@ CREATE TABLE `field_rub_materiel` (
 
 LOCK TABLES `field_rub_materiel` WRITE;
 /*!40000 ALTER TABLE `field_rub_materiel` DISABLE KEYS */;
-INSERT INTO `field_rub_materiel` VALUES (1015,2,0),(1015,3,1),(1028,1,0);
 /*!40000 ALTER TABLE `field_rub_materiel` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -534,10 +530,10 @@ DROP TABLE IF EXISTS `field_rub_structure`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `field_rub_structure` (
   `pages_id` int(10) unsigned NOT NULL,
-  `data` int(10) unsigned NOT NULL,
+  `data` int(11) NOT NULL,
   `sort` int(10) unsigned NOT NULL,
   PRIMARY KEY (`pages_id`,`sort`),
-  KEY `data` (`data`)
+  KEY `data` (`data`,`pages_id`,`sort`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -547,7 +543,6 @@ CREATE TABLE `field_rub_structure` (
 
 LOCK TABLES `field_rub_structure` WRITE;
 /*!40000 ALTER TABLE `field_rub_structure` DISABLE KEYS */;
-INSERT INTO `field_rub_structure` VALUES (1015,1,0),(1028,2,0),(1029,2,0);
 /*!40000 ALTER TABLE `field_rub_structure` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -560,10 +555,10 @@ DROP TABLE IF EXISTS `field_rub_terrain`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `field_rub_terrain` (
   `pages_id` int(10) unsigned NOT NULL,
-  `data` int(10) unsigned NOT NULL,
+  `data` int(11) NOT NULL,
   `sort` int(10) unsigned NOT NULL,
   PRIMARY KEY (`pages_id`,`sort`),
-  KEY `data` (`data`)
+  KEY `data` (`data`,`pages_id`,`sort`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -573,7 +568,6 @@ CREATE TABLE `field_rub_terrain` (
 
 LOCK TABLES `field_rub_terrain` WRITE;
 /*!40000 ALTER TABLE `field_rub_terrain` DISABLE KEYS */;
-INSERT INTO `field_rub_terrain` VALUES (1015,1,0),(1028,1,0);
 /*!40000 ALTER TABLE `field_rub_terrain` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -726,7 +720,7 @@ CREATE TABLE `fieldgroups_fields` (
 
 LOCK TABLES `fieldgroups_fields` WRITE;
 /*!40000 ALTER TABLE `fieldgroups_fields` DISABLE KEYS */;
-INSERT INTO `fieldgroups_fields` VALUES (2,2,1,NULL),(2,1,0,NULL),(3,4,2,NULL),(3,92,1,NULL),(4,5,0,NULL),(5,1,0,NULL),(3,104,3,NULL),(1,1,0,NULL),(1,44,5,NULL),(1,76,3,NULL),(80,1,0,NULL),(83,44,5,NULL),(83,76,3,NULL),(1,78,1,NULL),(83,1,0,NULL),(88,79,1,NULL),(1,79,2,NULL),(1,82,4,NULL),(88,1,0,NULL),(83,82,4,NULL),(83,78,1,NULL),(83,79,2,NULL),(97,105,1,NULL),(97,1,0,NULL),(98,101,7,NULL),(98,1,0,NULL),(98,79,1,NULL),(98,100,2,NULL),(98,103,3,NULL),(98,110,4,NULL),(98,98,5,NULL),(3,3,0,NULL),(97,79,2,NULL),(98,99,6,NULL),(99,1,0,NULL),(99,107,1,NULL),(99,108,2,NULL),(3,109,4,NULL),(100,1,0,NULL),(101,1,0,NULL),(98,102,8,NULL),(98,106,9,NULL);
+INSERT INTO `fieldgroups_fields` VALUES (2,2,1,NULL),(2,1,0,NULL),(3,4,2,NULL),(3,92,1,NULL),(4,5,0,NULL),(5,1,0,NULL),(3,104,3,NULL),(1,1,0,NULL),(1,44,5,NULL),(1,76,3,NULL),(80,1,0,NULL),(83,44,5,NULL),(83,76,3,NULL),(1,78,1,NULL),(83,1,0,NULL),(88,79,1,NULL),(1,79,2,NULL),(1,82,4,NULL),(88,1,0,NULL),(83,82,4,NULL),(83,78,1,NULL),(83,79,2,NULL),(97,105,1,NULL),(97,1,0,NULL),(98,106,9,NULL),(3,3,0,NULL),(97,79,2,NULL),(98,114,8,NULL),(99,1,0,NULL),(99,107,1,NULL),(99,108,2,NULL),(3,109,4,NULL),(100,1,0,NULL),(101,1,0,NULL),(98,116,7,NULL),(98,113,6,NULL),(98,112,5,NULL),(98,110,4,NULL),(98,111,3,NULL),(98,115,2,NULL),(98,79,1,NULL),(98,1,0,NULL);
 /*!40000 ALTER TABLE `fieldgroups_fields` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -747,7 +741,7 @@ CREATE TABLE `fields` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`),
   KEY `type` (`type`)
-) ENGINE=MyISAM AUTO_INCREMENT=111 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=117 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -756,7 +750,7 @@ CREATE TABLE `fields` (
 
 LOCK TABLES `fields` WRITE;
 /*!40000 ALTER TABLE `fields` DISABLE KEYS */;
-INSERT INTO `fields` VALUES (1,'FieldtypePageTitle','title',13,'Title','{\"required\":1,\"textformatters\":[\"TextformatterEntities\"],\"size\":0,\"maxlength\":255}'),(2,'FieldtypeModule','process',25,'Process','{\"description\":\"The process that is executed on this page. Since this is mostly used by ProcessWire internally, it is recommended that you don\'t change the value of this unless adding your own pages in the admin.\",\"collapsed\":1,\"required\":1,\"moduleTypes\":[\"Process\"],\"permanent\":1}'),(3,'FieldtypePassword','pass',24,'Set Password','{\"collapsed\":1,\"size\":50,\"maxlength\":128}'),(5,'FieldtypePage','permissions',24,'Permissions','{\"derefAsPage\":0,\"parent_id\":31,\"labelFieldName\":\"title\",\"inputfield\":\"InputfieldCheckboxes\"}'),(4,'FieldtypePage','roles',24,'Roles','{\"derefAsPage\":0,\"parent_id\":30,\"labelFieldName\":\"name\",\"inputfield\":\"InputfieldCheckboxes\",\"description\":\"User will inherit the permissions assigned to each role. You may assign multiple roles to a user. When accessing a page, the user will only inherit permissions from the roles that are also assigned to the page\'s template.\"}'),(92,'FieldtypeEmail','email',9,'E-Mail Address','{\"size\":70,\"maxlength\":255}'),(82,'FieldtypeTextarea','sidebar',0,'Sidebar','{\"inputfieldClass\":\"InputfieldCKEditor\",\"rows\":5,\"contentType\":1,\"toolbar\":\"Format, Bold, Italic, -, RemoveFormat\\r\\nNumberedList, BulletedList, -, Blockquote\\r\\nPWLink, Unlink, Anchor\\r\\nPWImage, Table, HorizontalRule, SpecialChar\\r\\nPasteText, PasteFromWord\\r\\nScayt, -, Sourcedialog\",\"inlineMode\":0,\"useACF\":1,\"usePurifier\":1,\"formatTags\":\"p;h2;h3;h4;h5;h6;pre;address\",\"extraPlugins\":[\"pwimage\",\"pwlink\",\"sourcedialog\"],\"removePlugins\":\"image,magicline\",\"toggles\":[2,4,8],\"collapsed\":2}'),(44,'FieldtypeImage','images',0,'Images','{\"extensions\":\"gif jpg jpeg png\",\"adminThumbs\":1,\"inputfieldClass\":\"InputfieldImage\",\"maxFiles\":0,\"descriptionRows\":1,\"fileSchema\":2,\"textformatters\":[\"TextformatterEntities\"],\"outputFormat\":1,\"defaultValuePage\":0,\"defaultGrid\":0,\"icon\":\"camera\"}'),(79,'FieldtypeTextarea','summary',1,'Description','{\"textformatters\":[\"TextformatterEntities\"],\"inputfieldClass\":\"InputfieldTextarea\",\"collapsed\":9,\"rows\":3,\"contentType\":0,\"minlength\":0,\"maxlength\":0,\"showCount\":0}'),(76,'FieldtypeTextarea','body',0,'Body','{\"inputfieldClass\":\"InputfieldCKEditor\",\"rows\":10,\"contentType\":1,\"toolbar\":\"Format, Bold, Italic, -, RemoveFormat\\r\\nNumberedList, BulletedList, -, Blockquote\\r\\nPWLink, Unlink, Anchor\\r\\nPWImage, Table, HorizontalRule, SpecialChar\\r\\nPasteText, PasteFromWord\\r\\nScayt, -, Sourcedialog\",\"inlineMode\":0,\"useACF\":1,\"usePurifier\":1,\"formatTags\":\"p;h2;h3;h4;h5;h6;pre;address\",\"extraPlugins\":[\"pwimage\",\"pwlink\",\"sourcedialog\"],\"removePlugins\":\"image,magicline\",\"toggles\":[2,4,8]}'),(78,'FieldtypeText','headline',0,'Headline','{\"description\":\"Use this instead of the Title if a longer headline is needed than what you want to appear in navigation.\",\"textformatters\":[\"TextformatterEntities\"],\"collapsed\":2,\"size\":0,\"maxlength\":1024}'),(98,'FieldtypeOptions','rub_duree',0,'Durée','{\"inputfieldClass\":\"InputfieldRadios\",\"collapsed\":0,\"optionColumns\":0,\"icon\":\"clock-o\"}'),(99,'FieldtypeOptions','rub_effectif',0,'Effectif','{\"inputfieldClass\":\"InputfieldRadios\",\"collapsed\":0,\"optionColumns\":0,\"icon\":\"users\"}'),(100,'FieldtypeOptions','rub_structure',0,'Structure','{\"inputfieldClass\":\"InputfieldRadios\",\"collapsed\":0,\"optionColumns\":0,\"icon\":\"home\"}'),(110,'FieldtypePage','rub_age',0,'Âge','{\"derefAsPage\":0,\"collapsed\":0,\"parent_id\":1032,\"labelFieldName\":\"title\",\"inputfield\":\"InputfieldCheckboxes\",\"optionColumns\":0,\"icon\":\"child\",\"allowUnpub\":1}'),(101,'FieldtypeOptions','rub_terrain',0,'Terrain','{\"inputfieldClass\":\"InputfieldCheckboxes\",\"collapsed\":0,\"icon\":\"fort-awesome\",\"optionColumns\":0}'),(102,'FieldtypeOptions','rub_materiel',0,'Matériel','{\"inputfieldClass\":\"InputfieldCheckboxes\",\"collapsed\":0,\"optionColumns\":0,\"icon\":\"futbol-o\"}'),(103,'FieldtypeOptions','rub_categorie',0,'Catégorie','{\"inputfieldClass\":\"InputfieldCheckboxes\",\"collapsed\":0,\"optionColumns\":0,\"icon\":\"list\"}'),(104,'FieldtypeModule','admin_theme',8,'Admin Theme','{\"moduleTypes\":[\"AdminTheme\"],\"labelField\":\"title\",\"inputfieldClass\":\"InputfieldRadios\"}'),(105,'FieldtypeOptions','rub_type',0,'Type','{\"inputfieldClass\":\"InputfieldSelect\",\"collapsed\":0,\"icon\":\"cog\",\"required\":1}'),(106,'FieldtypeFile','rub_pdf',0,'PDF','{\"textformatters\":[\"TextformatterEntities\"],\"extensions\":\"pdf\",\"maxFiles\":1,\"outputFormat\":0,\"defaultValuePage\":0,\"inputfieldClass\":\"InputfieldFile\",\"descriptionRows\":1,\"icon\":\"file-pdf-o\",\"fileSchema\":2}'),(107,'FieldtypeFile','language_files_site',24,'Site Translation Files','{\"extensions\":\"json csv\",\"maxFiles\":0,\"inputfieldClass\":\"InputfieldFile\",\"unzip\":1,\"description\":\"Use this field for translations specific to your site (like files in \\/site\\/templates\\/ for example).\",\"descriptionRows\":0,\"fileSchema\":2}'),(108,'FieldtypeFile','language_files',24,'Core Translation Files','{\"extensions\":\"json csv\",\"maxFiles\":0,\"inputfieldClass\":\"InputfieldFile\",\"unzip\":1,\"description\":\"Use this field for [language packs](http:\\/\\/modules.processwire.com\\/categories\\/language-pack\\/). To delete all files, double-click the trash can for any file, then save.\",\"descriptionRows\":0,\"fileSchema\":2}'),(109,'FieldtypePage','language',24,'Language','{\"derefAsPage\":1,\"parent_id\":1024,\"labelFieldName\":\"title\",\"inputfield\":\"InputfieldRadios\",\"required\":1}');
+INSERT INTO `fields` VALUES (1,'FieldtypePageTitle','title',13,'Title','{\"required\":1,\"textformatters\":[\"TextformatterEntities\"],\"size\":0,\"maxlength\":255}'),(2,'FieldtypeModule','process',25,'Process','{\"description\":\"The process that is executed on this page. Since this is mostly used by ProcessWire internally, it is recommended that you don\'t change the value of this unless adding your own pages in the admin.\",\"collapsed\":1,\"required\":1,\"moduleTypes\":[\"Process\"],\"permanent\":1}'),(3,'FieldtypePassword','pass',24,'Set Password','{\"collapsed\":1,\"size\":50,\"maxlength\":128}'),(5,'FieldtypePage','permissions',24,'Permissions','{\"derefAsPage\":0,\"parent_id\":31,\"labelFieldName\":\"title\",\"inputfield\":\"InputfieldCheckboxes\"}'),(4,'FieldtypePage','roles',24,'Roles','{\"derefAsPage\":0,\"parent_id\":30,\"labelFieldName\":\"name\",\"inputfield\":\"InputfieldCheckboxes\",\"description\":\"User will inherit the permissions assigned to each role. You may assign multiple roles to a user. When accessing a page, the user will only inherit permissions from the roles that are also assigned to the page\'s template.\"}'),(92,'FieldtypeEmail','email',9,'E-Mail Address','{\"size\":70,\"maxlength\":255}'),(82,'FieldtypeTextarea','sidebar',0,'Sidebar','{\"inputfieldClass\":\"InputfieldCKEditor\",\"rows\":5,\"contentType\":1,\"toolbar\":\"Format, Bold, Italic, -, RemoveFormat\\r\\nNumberedList, BulletedList, -, Blockquote\\r\\nPWLink, Unlink, Anchor\\r\\nPWImage, Table, HorizontalRule, SpecialChar\\r\\nPasteText, PasteFromWord\\r\\nScayt, -, Sourcedialog\",\"inlineMode\":0,\"useACF\":1,\"usePurifier\":1,\"formatTags\":\"p;h2;h3;h4;h5;h6;pre;address\",\"extraPlugins\":[\"pwimage\",\"pwlink\",\"sourcedialog\"],\"removePlugins\":\"image,magicline\",\"toggles\":[2,4,8],\"collapsed\":2}'),(44,'FieldtypeImage','images',0,'Images','{\"extensions\":\"gif jpg jpeg png\",\"adminThumbs\":1,\"inputfieldClass\":\"InputfieldImage\",\"maxFiles\":0,\"descriptionRows\":1,\"fileSchema\":2,\"textformatters\":[\"TextformatterEntities\"],\"outputFormat\":1,\"defaultValuePage\":0,\"defaultGrid\":0,\"icon\":\"camera\"}'),(79,'FieldtypeTextarea','summary',1,'Description','{\"textformatters\":[\"TextformatterEntities\"],\"inputfieldClass\":\"InputfieldTextarea\",\"collapsed\":9,\"rows\":3,\"contentType\":0,\"minlength\":0,\"maxlength\":0,\"showCount\":0}'),(76,'FieldtypeTextarea','body',0,'Body','{\"inputfieldClass\":\"InputfieldCKEditor\",\"rows\":10,\"contentType\":1,\"toolbar\":\"Format, Bold, Italic, -, RemoveFormat\\r\\nNumberedList, BulletedList, -, Blockquote\\r\\nPWLink, Unlink, Anchor\\r\\nPWImage, Table, HorizontalRule, SpecialChar\\r\\nPasteText, PasteFromWord\\r\\nScayt, -, Sourcedialog\",\"inlineMode\":0,\"useACF\":1,\"usePurifier\":1,\"formatTags\":\"p;h2;h3;h4;h5;h6;pre;address\",\"extraPlugins\":[\"pwimage\",\"pwlink\",\"sourcedialog\"],\"removePlugins\":\"image,magicline\",\"toggles\":[2,4,8]}'),(78,'FieldtypeText','headline',0,'Headline','{\"description\":\"Use this instead of the Title if a longer headline is needed than what you want to appear in navigation.\",\"textformatters\":[\"TextformatterEntities\"],\"collapsed\":2,\"size\":0,\"maxlength\":1024}'),(110,'FieldtypePage','rub_age',0,'Âge','{\"derefAsPage\":0,\"collapsed\":0,\"parent_id\":1032,\"labelFieldName\":\"title\",\"inputfield\":\"InputfieldCheckboxes\",\"optionColumns\":0,\"icon\":\"child\",\"allowUnpub\":1}'),(104,'FieldtypeModule','admin_theme',8,'Admin Theme','{\"moduleTypes\":[\"AdminTheme\"],\"labelField\":\"title\",\"inputfieldClass\":\"InputfieldRadios\"}'),(105,'FieldtypeOptions','rub_type',0,'Type','{\"inputfieldClass\":\"InputfieldSelect\",\"collapsed\":0,\"icon\":\"cog\",\"required\":1}'),(106,'FieldtypeFile','rub_pdf',0,'PDF','{\"textformatters\":[\"TextformatterEntities\"],\"extensions\":\"pdf\",\"maxFiles\":1,\"outputFormat\":0,\"defaultValuePage\":0,\"inputfieldClass\":\"InputfieldFile\",\"descriptionRows\":1,\"icon\":\"file-pdf-o\",\"fileSchema\":2}'),(107,'FieldtypeFile','language_files_site',24,'Site Translation Files','{\"extensions\":\"json csv\",\"maxFiles\":0,\"inputfieldClass\":\"InputfieldFile\",\"unzip\":1,\"description\":\"Use this field for translations specific to your site (like files in \\/site\\/templates\\/ for example).\",\"descriptionRows\":0,\"fileSchema\":2}'),(108,'FieldtypeFile','language_files',24,'Core Translation Files','{\"extensions\":\"json csv\",\"maxFiles\":0,\"inputfieldClass\":\"InputfieldFile\",\"unzip\":1,\"description\":\"Use this field for [language packs](http:\\/\\/modules.processwire.com\\/categories\\/language-pack\\/). To delete all files, double-click the trash can for any file, then save.\",\"descriptionRows\":0,\"fileSchema\":2}'),(109,'FieldtypePage','language',24,'Language','{\"derefAsPage\":1,\"parent_id\":1024,\"labelFieldName\":\"title\",\"inputfield\":\"InputfieldRadios\",\"required\":1}'),(111,'FieldtypePage','rub_categorie',0,'Catégorie','{\"derefAsPage\":0,\"parent_id\":1033,\"labelFieldName\":\"title\",\"inputfield\":\"InputfieldCheckboxes\",\"optionColumns\":0,\"icon\":\"list\",\"allowUnpub\":1,\"collapsed\":0}'),(112,'FieldtypePage','rub_duree',0,'Durée','{\"derefAsPage\":0,\"parent_id\":1039,\"labelFieldName\":\"title\",\"inputfield\":\"InputfieldCheckboxes\",\"optionColumns\":0,\"icon\":\"clock-o\",\"allowUnpub\":1,\"collapsed\":0}'),(113,'FieldtypePage','rub_effectif',0,'Effectif','{\"derefAsPage\":0,\"parent_id\":1040,\"labelFieldName\":\"title\",\"inputfield\":\"InputfieldCheckboxes\",\"optionColumns\":0,\"icon\":\"users\",\"allowUnpub\":1,\"collapsed\":0}'),(114,'FieldtypePage','rub_materiel',0,'Matériel','{\"derefAsPage\":0,\"parent_id\":1042,\"labelFieldName\":\"title\",\"inputfield\":\"InputfieldCheckboxes\",\"optionColumns\":0,\"icon\":\"futbol-o\",\"allowUnpub\":1,\"collapsed\":0}'),(115,'FieldtypePage','rub_structure',0,'Structure','{\"derefAsPage\":0,\"parent_id\":1038,\"labelFieldName\":\"title\",\"inputfield\":\"InputfieldCheckboxes\",\"optionColumns\":0,\"icon\":\"home\",\"allowUnpub\":1,\"collapsed\":0}'),(116,'FieldtypePage','rub_terrain',0,'Terrain','{\"derefAsPage\":0,\"parent_id\":1041,\"labelFieldName\":\"title\",\"inputfield\":\"InputfieldCheckboxes\",\"optionColumns\":0,\"icon\":\"fort-awesome\",\"allowUnpub\":1,\"collapsed\":0}');
 /*!40000 ALTER TABLE `fields` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1010,7 +1004,7 @@ CREATE TABLE `templates` (
 
 LOCK TABLES `templates` WRITE;
 /*!40000 ALTER TABLE `templates` DISABLE KEYS */;
-INSERT INTO `templates` VALUES (2,'admin',2,8,0,'{\"useRoles\":1,\"parentTemplates\":[2],\"allowPageNum\":1,\"redirectLogin\":23,\"slashUrls\":1,\"noGlobal\":1,\"compile\":3,\"modified\":1475560880,\"ns\":\"ProcessWire\"}'),(3,'user',3,8,0,'{\"useRoles\":1,\"noChildren\":1,\"parentTemplates\":[2],\"slashUrls\":1,\"pageClass\":\"User\",\"noGlobal\":1,\"noMove\":1,\"noTrash\":1,\"noSettings\":1,\"noChangeTemplate\":1,\"nameContentTab\":1}'),(4,'role',4,8,0,'{\"noChildren\":1,\"parentTemplates\":[2],\"slashUrls\":1,\"pageClass\":\"Role\",\"noGlobal\":1,\"noMove\":1,\"noTrash\":1,\"noSettings\":1,\"noChangeTemplate\":1,\"nameContentTab\":1}'),(5,'permission',5,8,0,'{\"noChildren\":1,\"parentTemplates\":[2],\"slashUrls\":1,\"guestSearchable\":1,\"pageClass\":\"Permission\",\"noGlobal\":1,\"noMove\":1,\"noTrash\":1,\"noSettings\":1,\"noChangeTemplate\":1,\"nameContentTab\":1}'),(1,'home',1,0,0,'{\"useRoles\":1,\"noParents\":-1,\"slashUrls\":1,\"compile\":3,\"modified\":1475848563,\"ns\":\"ProcessWire\",\"roles\":[37]}'),(29,'basic-page',83,0,0,'{\"slashUrls\":1,\"compile\":3,\"modified\":1475844241,\"ns\":\"ProcessWire\"}'),(26,'search',80,0,0,'{\"noChildren\":1,\"noParents\":-1,\"allowPageNum\":1,\"slashUrls\":1,\"compile\":3,\"modified\":1475746744,\"ns\":\"ProcessWire\"}'),(34,'sitemap',88,0,0,'{\"noChildren\":1,\"noParents\":-1,\"redirectLogin\":23,\"slashUrls\":1,\"compile\":3,\"modified\":1475746756,\"ns\":\"ProcessWire\"}'),(43,'rubrique',97,0,0,'{\"useRoles\":1,\"addRoles\":[1021],\"childTemplates\":[44],\"parentTemplates\":[1],\"slashUrls\":1,\"compile\":3,\"label\":\"Rubrique - Page de d\\u00e9finition d\'un regroupement d\'activit\\u00e9\",\"modified\":1476348023,\"noAppendTemplateFile\":1,\"ns\":\"\\\\\",\"roles\":[37,1021]}'),(44,'activite',98,0,0,'{\"useRoles\":1,\"editRoles\":[1021],\"createRoles\":[1021],\"noChildren\":1,\"parentTemplates\":[43],\"slashUrls\":1,\"compile\":3,\"label\":\"Activit\\u00e9\",\"modified\":1476348523,\"ns\":\"ProcessWire\",\"roles\":[37,1021]}'),(45,'language',99,8,0,'{\"parentTemplates\":[2],\"slashUrls\":1,\"pageClass\":\"Language\",\"pageLabelField\":\"name\",\"noGlobal\":1,\"noMove\":1,\"noTrash\":1,\"noChangeTemplate\":1,\"noUnpublish\":1,\"compile\":3,\"nameContentTab\":1,\"modified\":1475850109}'),(46,'option',100,0,0,'{\"useRoles\":1,\"editRoles\":[1021],\"createRoles\":[1021],\"noChildren\":1,\"parentTemplates\":[47],\"slashUrls\":1,\"compile\":3,\"label\":\"Option de filtre\",\"modified\":1476348661,\"roles\":[37,1021]}'),(47,'option-list',101,0,0,'{\"useRoles\":1,\"addRoles\":[1021],\"childTemplates\":[46],\"parentTemplates\":[29],\"slashUrls\":1,\"compile\":3,\"modified\":1476348025,\"roles\":[37,1021]}');
+INSERT INTO `templates` VALUES (2,'admin',2,8,0,'{\"useRoles\":1,\"parentTemplates\":[2],\"allowPageNum\":1,\"redirectLogin\":23,\"slashUrls\":1,\"noGlobal\":1,\"compile\":3,\"modified\":1475560880,\"ns\":\"ProcessWire\"}'),(3,'user',3,8,0,'{\"useRoles\":1,\"noChildren\":1,\"parentTemplates\":[2],\"slashUrls\":1,\"pageClass\":\"User\",\"noGlobal\":1,\"noMove\":1,\"noTrash\":1,\"noSettings\":1,\"noChangeTemplate\":1,\"nameContentTab\":1}'),(4,'role',4,8,0,'{\"noChildren\":1,\"parentTemplates\":[2],\"slashUrls\":1,\"pageClass\":\"Role\",\"noGlobal\":1,\"noMove\":1,\"noTrash\":1,\"noSettings\":1,\"noChangeTemplate\":1,\"nameContentTab\":1}'),(5,'permission',5,8,0,'{\"noChildren\":1,\"parentTemplates\":[2],\"slashUrls\":1,\"guestSearchable\":1,\"pageClass\":\"Permission\",\"noGlobal\":1,\"noMove\":1,\"noTrash\":1,\"noSettings\":1,\"noChangeTemplate\":1,\"nameContentTab\":1}'),(1,'home',1,0,0,'{\"useRoles\":1,\"noParents\":-1,\"slashUrls\":1,\"compile\":3,\"modified\":1475848563,\"ns\":\"ProcessWire\",\"roles\":[37]}'),(29,'basic-page',83,0,0,'{\"slashUrls\":1,\"compile\":3,\"modified\":1475844241,\"ns\":\"ProcessWire\"}'),(26,'search',80,0,0,'{\"noChildren\":1,\"noParents\":-1,\"allowPageNum\":1,\"slashUrls\":1,\"compile\":3,\"modified\":1475746744,\"ns\":\"ProcessWire\"}'),(34,'sitemap',88,0,0,'{\"noChildren\":1,\"noParents\":-1,\"redirectLogin\":23,\"slashUrls\":1,\"compile\":3,\"modified\":1475746756,\"ns\":\"ProcessWire\"}'),(43,'rubrique',97,0,0,'{\"useRoles\":1,\"addRoles\":[1021],\"childTemplates\":[44],\"parentTemplates\":[1],\"slashUrls\":1,\"compile\":3,\"label\":\"Rubrique - Page de d\\u00e9finition d\'un regroupement d\'activit\\u00e9\",\"modified\":1476348023,\"noAppendTemplateFile\":1,\"ns\":\"\\\\\",\"roles\":[37,1021]}'),(44,'activite',98,0,0,'{\"useRoles\":1,\"editRoles\":[1021],\"createRoles\":[1021],\"noChildren\":1,\"parentTemplates\":[43],\"slashUrls\":1,\"compile\":3,\"label\":\"Activit\\u00e9\",\"modified\":1476350489,\"ns\":\"ProcessWire\",\"roles\":[37,1021]}'),(45,'language',99,8,0,'{\"parentTemplates\":[2],\"slashUrls\":1,\"pageClass\":\"Language\",\"pageLabelField\":\"name\",\"noGlobal\":1,\"noMove\":1,\"noTrash\":1,\"noChangeTemplate\":1,\"noUnpublish\":1,\"compile\":3,\"nameContentTab\":1,\"modified\":1475850109}'),(46,'option',100,0,0,'{\"useRoles\":1,\"editRoles\":[1021],\"createRoles\":[1021],\"noChildren\":1,\"parentTemplates\":[47],\"slashUrls\":1,\"compile\":3,\"label\":\"Option de filtre\",\"modified\":1476348661,\"roles\":[37,1021]}'),(47,'option-list',101,0,0,'{\"useRoles\":1,\"addRoles\":[1021],\"childTemplates\":[46],\"parentTemplates\":[29],\"slashUrls\":1,\"compile\":3,\"modified\":1476348025,\"roles\":[37,1021]}');
 /*!40000 ALTER TABLE `templates` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -1023,4 +1017,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-10-13 11:04:38
+-- Dump completed on 2016-10-13 11:22:28
