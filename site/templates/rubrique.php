@@ -36,10 +36,16 @@ $list = $page->children($params);
 
 <!-- Results -->
 <div class="clearfix"></div>
-<?php foreach($list as $item):?>
+<?php foreach($list as $activity):?>
     <h3>
-        <?=$item->title?>
+        <?=$activity->title?>
     </h3>
+    <?php foreach($allowedFilters as $f){
+        if( ! $activity[$f]) continue;
+        foreach($activity[$f] as $option){
+            echo "<span class='label label-primary'>{$option->title}</span>&nbsp;";
+        }
+    }?>
 <?php endforeach;?>
 
 <?php include '_footer.php';?>
