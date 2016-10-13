@@ -1,0 +1,14 @@
+{
+  "name": "pw_superanim",
+  "homepage": "https://github.com/Cadrach/pw_superanim",
+  "authors": [
+    "cadrach@gmail.com"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7"
+  }
+}
