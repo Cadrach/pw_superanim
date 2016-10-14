@@ -40,6 +40,9 @@ $isHome = count($page->parents()) == 0;
     <link href='//fonts.googleapis.com/css?family=Lusitana:400,700|Quattrocento:400,700' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" type="text/css" href="<?php echo $config->urls->templates?>styles/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo $config->urls->templates?>styles/main.css" />
+
+    <script type="text/javascript" src="<?php echo $config->urls->templates?>bower/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo $config->urls->templates?>bower/select2/dist/js/select2.min.js"></script>
 </head>
 <body class="<?php if($sidebar) echo "has-sidebar "; ?>">
 
