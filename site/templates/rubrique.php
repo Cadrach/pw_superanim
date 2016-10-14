@@ -5,7 +5,7 @@
 <?php include '_header.php';?>
 
 <!-- List of filters -->
-<form method="GET">
+<form method="GET" action="<?=$page->url?>">
     <?php
     $filters = $pages->find('parent=1030');
     $allowedFilters = [];
@@ -47,6 +47,8 @@
 <!-- -->
 <?php
 $params = array_intersect_key(array_filter($_GET), array_flip($allowedFilters));
+$params['limit'] = 5;
+$params['sort'] = 'title';
 $list = $page->children($params);
 ?>
 
@@ -72,6 +74,17 @@ $list = $page->children($params);
         }?>
     </div>
 <?php endforeach;?>
+
+<!-- PAGINATION -->
+<div class="clearfix"></div>
+<?=$list->renderPager([
+    'listMarkup' => "<ul class='pagination'>{out}</ul>",
+    'itemMarkup' => "<li class='{class}'>{out}</li> ",
+    'linkMarkup' => "<a href='{url}'><span>{out}</span></a>",
+    'currentItemClass' => "active",
+    'previousItemLabel' => '&laquo;',
+    'nextItemLabel' => '&raquo;',
+]) ?>
 
 <?php if( ! count($list)):?>
     <div class="alert alert-info">Aucun résultat à afficher</div>
