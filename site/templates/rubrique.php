@@ -59,9 +59,10 @@ $list = $page->children($params);
         <img class="pull-left" src="<?=($activity->act_image ? $activity->act_image->size(100,100)->url:$defaultImage)?>">
         <h3>
             <?=$activity->title?>
+            <?php if($activity->editable()) echo "<a class='btn btn-default btn-xs' href='$activity->editUrl'><i class='fa fa-pencil'></i> Editer</a>"; ?>
             <?php if($activity->act_pdf):?>
                 <a class="pull-right" href="<?=$activity->act_pdf->url?>" target="_blank">
-                    <i class="fa fa-file-pdf-o"></i> Télécharger
+                    <i class="fa fa-file-pdf-o"></i> Voir
                 </a>
             <?php endif;?>
         </h3>

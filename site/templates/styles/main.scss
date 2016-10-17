@@ -7,14 +7,28 @@
     h3{
         padding-top: 10px;
         margin-bottom: 5px;
+        &::first-letter{
+            text-transform: uppercase;
+        }
+        a.pull-right, a.pull-right:visited{
+            font-size: 16px;
+            border: 0;
+            color: #000;
+        }
+        a.btn{
+            height: 20px;
+            position: relative;
+            top: -4px;
+            display: none;
+        }
     }
     img{
         margin: 5px;
         margin-left: 0;
         border: 2px solid #666;
     }
-    a{
-        border: 0;
+    &:hover a.btn{
+        display: inline-block;
     }
 }
 

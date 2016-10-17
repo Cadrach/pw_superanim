@@ -59,7 +59,7 @@ $isHome = count($page->parents()) == 0;
     }
 
     // output an "Edit" link if this page happens to be editable by the current user
-    if($page->editable()) echo "<li class='edit'><a href='$page->editUrl'>Edit</a></li>";
+    if($page->editable()) echo "<li class='edit'><a href='$page->editUrl'><i class='fa fa-pencil'></i> Editer</a></li>";
     ?></ul>
 
 <!-- search form-->
