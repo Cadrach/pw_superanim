@@ -20,6 +20,17 @@
             continue;
         }
 
+        //Find all stored values for activities for this filter
+        $stmt = $database->prepare("SELECT data FROM pages INNER JOIN field_{$f->code} ON id=pages_id WHERE parent_id= ?");
+        $stmt->execute([$page->id]);
+        $possibleValues = $stmt->fetchAll(\PDO::FETCH_COLUMN);
+
+        //If no possible values, ignore this filter
+        if( ! count($possibleValues)){
+            continue;
+        }
+
+        //Increment counter of filters
         $count++;
 
         //Add filter to allowed codes
@@ -28,6 +39,8 @@
         //Display the select
         echo "<div class='form-group col-xs-3'><label>{$f->title}</label><select class='form-control' name='{$f->code}[]' multiple>\n";
             foreach($f->children() as $child){
+                if( ! in_array($child->id, $possibleValues)) continue; //ignore not possible values
+
                 echo "<option value='{$child->id}' ".(in_array($child->id, $input->get[$f->code]) ? 'SELECTED':'').">{$child->title}</option>\n";
             }
         echo "</select></div>";
