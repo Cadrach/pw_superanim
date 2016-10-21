@@ -4,6 +4,10 @@
 
 <?php include '_header.php';?>
 
+<?php if($page->summary):?>
+    <?=$page->summary?><br/><br/>
+<?php endif;?>
+
 <!-- List of filters -->
 <form method="GET" action="<?=$page->url?>">
     <?php
