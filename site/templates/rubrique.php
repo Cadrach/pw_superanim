@@ -53,10 +53,13 @@
         echo (! ($count%4) ? '</div><div class="row">':'');
     }
 
-    echo '<div class="form-group col-xs-3">
+    //If any filter, display them
+    if($count){
+        echo '<div class="form-group col-xs-3">
             <label>&nbsp;</label>
             <input class="btn btn-success form-control" type="submit" value="Filtrer"/>
         </div>';
+    }
     echo "</div>";
     ?>
 </form>
@@ -103,7 +106,6 @@ $list = $page->children($params);
     'previousItemLabel' => '&laquo;',
     'nextItemLabel' => '&raquo;',
 ]) ?>
-
 <?php if( ! count($list)):?>
     <div class="alert alert-info">Aucun résultat à afficher</div>
 <?php endif?>
